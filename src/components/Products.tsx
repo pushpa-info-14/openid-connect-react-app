@@ -1,8 +1,9 @@
 function Products() {
   return (
     <>
-      <a href="https://localhost:44360">Legacy Url</a>
-      <br />
+      <a href="https://localhost:44360" className="btn btn-primary">
+        Legacy Url
+      </a>
     </>
   );
 }

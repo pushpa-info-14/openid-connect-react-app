@@ -1,11 +1,13 @@
 import { AuthProvider } from "oidc-react";
 import "./App.css";
 import logo from "./assets/react.svg";
-import LoggedIn from "./LoggedIn";
+import newUi from "./assets/new-ui.png";
+import LoggedIn from "./components/LoggedIn";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const oidcConfig = {
   onSignIn: async (user: any) => {
-    alert("You just signed in, congratz! Check out the console!");
+    //alert("You just signed in, congratz! Check out the console!");
     console.log(user);
     //window.location.hash = "";
     window.location.replace("http://localhost:5173");
@@ -20,12 +22,12 @@ const oidcConfig = {
 function App() {
   return (
     <AuthProvider {...oidcConfig}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>OIDC React</p>
-          <LoggedIn />
-        </header>
+      <div className="container">
+        <header className="App-header"></header>
+        <img src={newUi} className="img-fluid" alt="New UI" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
+          <p>OpenId Connect React App</p> */}
+        <LoggedIn />
       </div>
     </AuthProvider>
   );

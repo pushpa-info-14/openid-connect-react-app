@@ -1,5 +1,6 @@
 import { useAuth } from "oidc-react";
-import Products from "./components/Products";
+import Products from "./Products";
+import Weather from "./Weather";
 
 const LoggedIn = () => {
   const auth = useAuth();
@@ -7,9 +8,10 @@ const LoggedIn = () => {
     return (
       <div>
         <Products />
-        <strong>Logged in! 🎉</strong>
         <br />
-        <button onClick={() => auth.signOut()}>Log out!</button>
+        <br />
+        <Weather />
+        {/* <button onClick={() => auth.signOut()}>Log out!</button> */}
       </div>
     );
   }
